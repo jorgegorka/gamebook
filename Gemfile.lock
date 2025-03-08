@@ -223,6 +223,9 @@ GEM
     parser (3.3.7.1)
       ast (~> 2.4.1)
       racc
+    positioning (0.4.5)
+      activerecord (>= 6.1)
+      activesupport (>= 6.1)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -429,6 +432,7 @@ DEPENDENCIES
   jbuilder
   kamal
   marksmith
+  positioning
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)

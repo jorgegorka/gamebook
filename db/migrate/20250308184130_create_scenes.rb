@@ -5,9 +5,11 @@ class CreateScenes < ActiveRecord::Migration[8.0]
       t.text :body
       t.text :notes
       t.integer :status
-      t.integer :category
+      t.integer :position, null: false, default: 0
 
       t.timestamps
     end
+
+    add_index :scenes, %i[chapter_id position], unique: true
   end
 end

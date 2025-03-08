@@ -8,6 +8,7 @@ gem "importmap-rails"
 gem "jbuilder"
 gem "kamal", require: false
 gem "marksmith"
+gem "positioning"
 gem "propshaft"
 gem "puma", ">= 5.0"
 gem "rails", "~> 8.0.1"

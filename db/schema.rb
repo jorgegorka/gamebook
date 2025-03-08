@@ -32,9 +32,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_08_184130) do
     t.integer "book_id", null: false
     t.string "title"
     t.text "summary"
-    t.integer "position"
+    t.integer "position", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["book_id", "position"], name: "index_chapters_on_book_id_and_position", unique: true
     t.index ["book_id"], name: "index_chapters_on_book_id"
   end
 
@@ -43,9 +44,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_08_184130) do
     t.text "body"
     t.text "notes"
     t.integer "status"
-    t.integer "category"
+    t.integer "position", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["chapter_id", "position"], name: "index_scenes_on_chapter_id_and_position", unique: true
     t.index ["chapter_id"], name: "index_scenes_on_chapter_id"
   end
 
