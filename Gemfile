@@ -2,10 +2,12 @@ source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "bcrypt", "~> 3.1.7"
+gem "commonmarker"
 gem "image_processing", "~> 1.2"
 gem "importmap-rails"
 gem "jbuilder"
 gem "kamal", require: false
+gem "marksmith"
 gem "propshaft"
 gem "puma", ">= 5.0"
 gem "rails", "~> 8.0.1"
