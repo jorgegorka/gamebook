@@ -1,24 +1,13 @@
-# README
+# GAMEBOOK
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+This is a simple web application that allows users to create and play text-based games.
 
-* Ruby version
+## Manual
 
-* System dependencies
+Some day this will be a manual.
 
-* Configuration
+## Technology
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The application is built using Ruby on Rails, Tailwindcss, and Hotwire.
