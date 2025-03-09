@@ -21,7 +21,7 @@
 
   <body>
     <%= render "layouts/header" %>
-    <%= tag.div render("shared/flash"), id: "flash-messages" %>
+    <%= tag.div render("shared/flash", flash: flash), id: "flash-messages" %>
     <main class="mx-auto mt-10 px-5 max-w-7xl">
       <%= yield %>
     </main>
