@@ -9,7 +9,7 @@ class ScenesSeed
     p 'creating books'
 
     Chapter.all.each do |chapter|
-      4.times {  chapter.scenes.create! body: Faker::Lorem.paragraph, notes: Faker::Lorem.paragraph }
+      4.times {  chapter.scenes.create! title: Faker::GreekPhilosophers.quote, body: Faker::Lorem.paragraph, notes: Faker::Lorem.paragraph }
     end
   end
 end

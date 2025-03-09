@@ -12,6 +12,7 @@ class Scene < ApplicationRecord
 
   enum :status, { draft: 0, editing: 1, ready: 2 }, prefix: true
 
+  validates :title, presence: true
 
   def any_links?
     inbound_links.any? || outbound_links.any?

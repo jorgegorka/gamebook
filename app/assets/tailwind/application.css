@@ -16,4 +16,7 @@
   .destroy-link {
     @apply text-gray-600 hover:text-gray-800;
   }
+  .main-menu-link {
+    @apply font-semibold text-slate-900 px-2 py-1 rounded hover:bg-slate-100;
+  }
 }

@@ -1,6 +1,7 @@
-<%= render "shared/section_header", title: t("welcome") do %>
+<% content_for :top_right do %>
   <%= link_to t("books.new"), new_book_path, class: "new-link" %>
 <% end %>
+<%= render "shared/section_header", title: t("welcome") %>
 <%= tag.ul class: "mt-10 divide-y divide-slate-100" do %>
   <%= render @books %>
 <% end %>

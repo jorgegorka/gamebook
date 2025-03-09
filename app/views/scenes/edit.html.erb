@@ -1,2 +1,5 @@
+<% content_for :top_center do %>
+  <%= link_to @chapter.title, book_chapter_path(@chapter.book, @chapter), class: "main-menu-link" %>
+<% end %>
 <%= render "shared/section_header", title: t('scenes.edit') %>
 <%= render "scenes/form", chapter: @chapter, scene: @scene %>

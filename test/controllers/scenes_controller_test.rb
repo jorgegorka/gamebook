@@ -18,13 +18,14 @@ class ScenesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get create" do
-    params = { scene: { body: "New Scene", notes: "Scene Description" } }
+    params = { scene: { title: "Concerto", body: "New Scene", notes: "Scene Description" } }
     post chapter_scenes_url(book), params: params
 
     assert_response :redirect
 
     scene = chapter.scenes.last
 
+    assert_equal "Concerto", scene.title
     assert_equal "New Scene", scene.body
     assert_equal "Scene Description", scene.notes
     assert_equal Scene::STATUS_DRAFT, scene.status

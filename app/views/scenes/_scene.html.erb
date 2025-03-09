@@ -1,6 +1,6 @@
 <%= tag.li class: "grid grid-cols-4 p-4" do %>
   <%= tag.div class: "col-span-2" do %>
-    <%= link_to truncate(scene.body), chapter_scene_path(chapter, scene), class: "text-link" %>
+    <%= link_to scene.title, chapter_scene_path(chapter, scene), class: "text-link" %>
   <% end %>
   <%= tag.div class: "col-span-1" do %>
     <%= scene.any_links? %>

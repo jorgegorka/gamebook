@@ -1,8 +1,13 @@
+<% content_for :top_center do %>
+  <%= link_to @book.title, book_path(@book), class: "main-menu-link" %>
+<% end %>
+<% content_for :top_right do %>
+  <%= link_to t("scenes.new"), new_chapter_scene_path(@chapter), class: "new-link" %>
+<% end %>
 <% count = @chapter.scenes.count %>
 <%= render "shared/section_header", title: @chapter.title do %>
-  <%= link_to t("chapters.new"), new_chapter_scene_path(@chapter), class: "new-link" %>
+  <%= "#{count} #{t("chapters.scenes", count:)}" %>
 <% end %>
-<%= tag.p "#{count} #{t("chapters.scenes", count:)}", class: "text-slate-500" %>
 <%= tag.ul class: "mt-10 divide-y divide-slate-100" do %>
   <%= tag.li class: "grid grid-cols-4 p-4" do %>
     <%= tag.p t("scenes.body"), class: "col-span-2" %>

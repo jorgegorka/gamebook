@@ -83,6 +83,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_09_114208) do
 
   create_table "scenes", force: :cascade do |t|
     t.integer "chapter_id", null: false
+    t.string "title"
     t.text "body"
     t.text "notes"
     t.integer "status", default: 0, null: false

@@ -16,7 +16,7 @@ class BooksController < ApplicationController
     @book = Current.user.books.create(book_params)
 
     if @book.persisted?
-      redirect_to book_path(@book), notice: "Book created!"
+      redirect_to book_path(@book), notice: t("books.created")
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class BooksController < ApplicationController
     @book.update(book_params)
 
     if @book.persisted?
-      redirect_to book_path(@book), notice: "Book updated!"
+      redirect_to book_path(@book), notice: t("books.updated")
     else
       render :edit, status: :unprocessable_entity
     end
@@ -38,7 +38,7 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
 
-    redirect_to books_path, notice: "Book deleted!"
+    redirect_to books_path, notice: t("books.deleted")
   end
 
   private

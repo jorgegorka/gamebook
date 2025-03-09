@@ -8,7 +8,7 @@ class LinksController < ApplicationController
     @link = scene.inbound_links.create(link_params)
 
     if @link.persisted?
-      redirect_to chapter_scene_path(scene.chapter, scene), notice: t("link.created")
+      redirect_to chapter_scene_path(scene.chapter, scene), notice: t("links.created")
     else
       render :new, status: :unprocessable_entity
     end
@@ -18,7 +18,7 @@ class LinksController < ApplicationController
     @link.update(link_params)
 
     if @link.persisted?
-      redirect_to chapter_scene_path(@scene.chapter, @scene), notice: t("link.updated")
+      redirect_to chapter_scene_path(@scene.chapter, @scene), notice: t("links.updated")
     else
       render :edit, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class LinksController < ApplicationController
   def destroy
     @link.destroy
 
-    redirect_to chapter_scene_path(@scene.chapter, @scene), notice: t("link.deleted")
+    redirect_to chapter_scene_path(@scene.chapter, @scene), notice: t("links.deleted")
   end
 
   private

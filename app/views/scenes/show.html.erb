@@ -1,8 +1,20 @@
-<%= render "shared/section_header", title: @chapter.title do %>
-  <%= link_to t("scenes.edit"), chapter_scene_path(@chapter, @scene), class: "edit-link" %>
+<% content_for :top_center do %>
+  <%= link_to @chapter.title, book_chapter_path(@chapter.book, @chapter), class: "main-menu-link" %>
 <% end %>
+<% content_for :top_right do %>
+  <%= link_to t("scenes.edit"), edit_chapter_scene_path(@chapter, @scene), class: "edit-link" %>
+<% end %>
+<%= render "shared/section_header", title: @scene.title %>
 <%= tag.div class: "mt-10" do %>
   <%== marksmithed @scene.body %>
 <% end %>
 <%= tag.p t('links.title'), class: "mt-10 text-xl font-medium text-gray-700" %>
+<%= tag.ul class: "mt-10 divide-y divide-slate-100" do %>
+  <%= tag.li class: "grid grid-cols-3 p-4" do %>
+    <%= tag.p t("links.name"), class: "col-span-1" %>
+    <%= tag.p t("links.target"), class: "col-span-1" %>
+    <%= tag.div class: "col-span-1" %>
+  <% end %>
+  <%= render @scene.inbound_links %>
+<% end %>
 <%= render "links/form", origin_id: @scene.id, scenes: @scenes, link: Link.new %>

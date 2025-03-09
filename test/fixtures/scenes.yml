@@ -1,17 +1,20 @@
 scene_a:
   chapter: one
+  title: "The beginning"
   body: MyText
   notes: MyText
   status: <%= Scene::STATUS_DRAFT %>
 
 scene_b:
   chapter: two
+  title: "The middle"
   body: MyText
   notes: MyText
   status: <%= Scene::STATUS_READY %>
 
 scene_c:
   chapter: one
+  title: "The end"
   body: "content of the scene c"
   notes: "notes of the scene c"
   status: <%= Scene::STATUS_DRAFT %>
