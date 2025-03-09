@@ -17,6 +17,6 @@
     @apply text-gray-600 hover:text-gray-800;
   }
   .main-menu-link {
-    @apply font-semibold text-slate-900 px-2 py-1 rounded hover:bg-slate-100;
+    @apply font-semibold text-violet-800 px-2 py-1 rounded hover:bg-violet-100;
   }
 }
