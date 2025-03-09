@@ -11,6 +11,7 @@ class Book < ApplicationRecord
   end
 
   has_many :chapters, dependent: :destroy
+  has_many :scenes, through: :chapters
 
   enum :status, { draft: 0, editing: 1, ready: 2, published: 3 }, prefix: true
 

@@ -1,11 +1,17 @@
-one:
+scene_a:
   chapter: one
   body: MyText
   notes: MyText
   status: <%= Scene::STATUS_DRAFT %>
 
-two:
+scene_b:
   chapter: two
   body: MyText
   notes: MyText
   status: <%= Scene::STATUS_READY %>
+
+scene_c:
+  chapter: one
+  body: "content of the scene c"
+  notes: "notes of the scene c"
+  status: <%= Scene::STATUS_DRAFT %>

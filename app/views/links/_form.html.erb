@@ -1,0 +1,16 @@
+<%= tw_form_with model: link do |form| %>
+  <%= form.hidden_field :origin_id, value: origin_id %>
+  <%= tag.fieldset class: "grid grid-cols-1 md:grid-cols-2 md:gap-x-6 mt-6" do %>
+    <%= tag.div class: "" do %>
+      <%= form.text_input :title %>
+    <% end %>
+    <%= tag.div class: "" do %>
+      <%= form.label :target_id, class: "block mt-6 mb-3 text-xl lg:text-sm font-medium text-gray-700" %>
+      <%= form.collection_select_input :target_id, scenes, :first, :last %>
+    <% end %>
+  <% end %>
+  <%= tag.fieldset class: "mt-6 flex justify-end items-center gap-x-8" do %>
+    <%= link_to t("cancel"), books_path, class: "cancel-link" %>
+    <%= form.submit t("links.save"), class: "edit-link" %>
+  <% end %>
+<% end %>

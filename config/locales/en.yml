@@ -29,6 +29,10 @@ en:
     title: "Chapter title"
   edit: "Edit"
   delete: "Delete"
+  links:
+    save: "Save link"
+    title: "Links to other scenes"
+  not_found: "we couldn't find that record."
   scenes:
     add_new: "Create a new scene"
     has_links: "Links to other scenes?"

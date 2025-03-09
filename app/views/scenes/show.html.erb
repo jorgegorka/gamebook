@@ -1,4 +1,8 @@
-<%= render "shared/section_header", title: '' do %>
+<%= render "shared/section_header", title: @chapter.title do %>
   <%= link_to t("scenes.edit"), chapter_scene_path(@chapter, @scene), class: "edit-link" %>
 <% end %>
-<%== marksmithed @scene.body %>
+<%= tag.div class: "mt-10" do %>
+  <%== marksmithed @scene.body %>
+<% end %>
+<%= tag.p t('links.title'), class: "mt-10 text-xl font-medium text-gray-700" %>
+<%= render "links/form", origin_id: @scene.id, scenes: @scenes, link: Link.new %>

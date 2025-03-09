@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   allow_browser versions: :modern
 
+  rescue_from ActiveRecord::RecordNotFound do
+    flash[:notice] = I18n.t("not_found")
+    redirect_to root_path
+  end
+
   private
 
     def set_locale
