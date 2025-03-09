@@ -14,9 +14,9 @@ class AccountsSeed
 
     def create_account
       account = Account.create!(name: 'The writer')
-      account.users.create! name: "Account admin", username: 'adminfirst', email: 'admin@test.com', role: User::ADMIN,
-                             password: '111111', password_confirmation: '111111'
-      account.users.create! name: "regular name", username: 'regularusername', email: 'regular@test.com', role: User::READER,
-                             password: '111111', password_confirmation: '111111'
+      account.users.create! name: "Account admin", email_address: 'admin@test.com', role: User::ROLE_ADMIN,
+                             password: '111111111', password_confirmation: '111111111'
+      account.users.create! name: "regular name", email_address: 'user@test.com', role: User::ROLE_READER,
+                             password: '111111111', password_confirmation: '111111111'
     end
 end

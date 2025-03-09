@@ -157,7 +157,7 @@ class TailwindFormBuilder < ActionView::Helpers::FormBuilder
   end
 
   def submit_button(name, *args, &)
-    args << { class: "inline-flex items-center px-3 py-2 border border-transparent text-xl lg:text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring -green-500" }
+    args << { class: "inline-flex items-center px-3 py-2 border border-transparent text-xl lg:text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" }
     button(name, *args, &)
   end
 

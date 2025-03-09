@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+@layer base {
+  .new-link {
+    @apply rounded-full bg-indigo-50 px-3 py-1.5 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
+  }
+  .edit-link {
+    @apply rounded-full bg-green-50 px-3 py-1.5 text-sm font-semibold text-green-600 shadow-sm hover:bg-green-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600;
+  }
+  .destroy-link {
+    @apply rounded-full bg-red-50 px-3 py-1.5 text-sm font-semibold text-red-600 shadow-sm hover:bg-red-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600;
+  }
+  .destroy-link {
+    @apply text-gray-600 hover:text-gray-800;
+  }
+}

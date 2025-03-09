@@ -1,0 +1,4 @@
+<%= tag.div class: "border-b border-gray-200 py-5 flex justify-between items-center" do %>
+  <%= tag.h3 title, class: "text-base font-semibold text-gray-900" %>
+  <%= yield if block_given? %>
+<% end %>

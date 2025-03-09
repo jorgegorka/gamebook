@@ -1,7 +1,5 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+the_writer:
+  name: The Writer
 
-one:
-  name: MyString
-
-two:
-  name: MyString
+other_account:
+  name: Other account

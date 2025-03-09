@@ -7,7 +7,5 @@ class Chapter < ApplicationRecord
 
   has_many :scenes, dependent: :destroy
 
-  positioned on: :book
-
-  enum status: { draft: 0, editing: 1, ready: 2 }, prefix: true
+  enum :status, { draft: 0, editing: 1, ready: 2 }, prefix: true
 end

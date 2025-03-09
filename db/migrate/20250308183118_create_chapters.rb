@@ -5,6 +5,7 @@ class CreateChapters < ActiveRecord::Migration[8.0]
       t.string :title
       t.text :summary
       t.integer :position, null: false, default: 0
+      t.integer :status, default: 0, null: false
 
       t.timestamps
     end
