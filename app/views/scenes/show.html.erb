@@ -1,0 +1,4 @@
+<%= render "shared/section_header", title: '' do %>
+  <%= link_to t("scenes.edit"), chapter_scene_path(@chapter, @scene), class: "edit-link" %>
+<% end %>
+<%== marksmithed @scene.body %>

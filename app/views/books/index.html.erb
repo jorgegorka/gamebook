@@ -1,6 +1,6 @@
-<%= render "shared/section_header", title: "Welcome to Gamebook creator" do %>
-  <%= link_to "New book", new_book_path, class: "new-link" %>
+<%= render "shared/section_header", title: t("welcome") do %>
+  <%= link_to t("books.new"), new_book_path, class: "new-link" %>
 <% end %>
-<%= tag.section class: "mt-10" do %>
+<%= tag.ul class: "mt-10 divide-y divide-slate-100" do %>
   <%= render @books %>
 <% end %>

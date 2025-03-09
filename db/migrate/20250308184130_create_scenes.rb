@@ -10,6 +10,6 @@ class CreateScenes < ActiveRecord::Migration[8.0]
       t.timestamps
     end
 
-    add_index :scenes, %i[chapter_id position], unique: true
+    add_index :scenes, %i[chapter_id position]
   end
 end

@@ -6,6 +6,7 @@ class CreateBooks < ActiveRecord::Migration[8.0]
       t.text :summary
       t.text :remarks
       t.integer :status, default: 0, null: false
+      t.integer :chapters_count, default: 0, null: false
 
       t.timestamps
     end

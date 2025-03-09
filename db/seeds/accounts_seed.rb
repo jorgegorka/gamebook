@@ -18,5 +18,7 @@ class AccountsSeed
                              password: '111111111', password_confirmation: '111111111'
       account.users.create! name: "regular name", email_address: 'user@test.com', role: User::ROLE_READER,
                              password: '111111111', password_confirmation: '111111111'
+
+      account
     end
 end

@@ -1,4 +1,2 @@
-<div>
-  <h1 class="font-bold text-4xl">Chapters#edit</h1>
-  <p>Find me in app/views/chapters/edit.html.erb</p>
-</div>
+<%= render "shared/section_header", title: @chapter.title %>
+<%= render "books/form", chapter: @chapter, book: @book %>

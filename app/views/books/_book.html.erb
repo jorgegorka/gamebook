@@ -1,0 +1,9 @@
+<%= tag.li class: "grid grid-cols-4 p-4" do %>
+  <%= tag.div class: "col-span-3" do %>
+    <%= link_to book.title, book_path(book), class: "text-link" %>
+  <% end %>
+  <%= tag.div class: "col-span-1" do %>
+    <%= link_to t("edit"), edit_book_path(book), class: "edit-link" %>
+    <%= link_to t("delete"), book, method: :delete, data: { confirm: t("are_you_sure") }, class: "delete-link" %>
+  <% end %>
+<% end %>

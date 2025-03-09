@@ -1,38 +1,66 @@
 require "test_helper"
 
 class ChaptersControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get chapters_index_url
-    assert_response :success
+  def setup
+    sign_in admin
   end
 
   test "should get show" do
-    get chapters_show_url
+    get book_chapter_url(book, chapter)
+
     assert_response :success
   end
 
   test "should get new" do
-    get chapters_new_url
+    get new_book_chapter_url(book)
+
     assert_response :success
   end
 
   test "should get create" do
-    get chapters_create_url
-    assert_response :success
+    params = { chapter: { title: "New Chapter", summary: "Chapter Description" } }
+    post book_chapters_url(book), params: params
+
+    assert_response :redirect
+
+    chapter = book.chapters.last
+
+    assert_equal "New Chapter", chapter.title
+    assert_equal "Chapter Description", chapter.summary
+    assert_equal Book::STATUS_DRAFT, chapter.status
   end
 
   test "should get edit" do
-    get chapters_edit_url
+    get edit_book_url(book, chapter)
+
     assert_response :success
   end
 
   test "should get update" do
-    get chapters_update_url
-    assert_response :success
+    put book_chapter_url(book, chapter), params: { chapter: { title: "Updated Title" } }
+
+    assert_response :redirect
+
+    chapter.reload
+
+    assert_equal "Updated Title", chapter.title
   end
 
   test "should get destroy" do
-    get chapters_destroy_url
-    assert_response :success
+    assert_difference("book.chapters.count", -1) do
+      delete book_chapter_url(book, chapter)
+    end
+
+    assert_response :redirect
   end
+
+  private
+
+    def book
+      @book ||= books(:one)
+    end
+
+    def chapter
+      @chapter ||= book.chapters.first
+    end
 end

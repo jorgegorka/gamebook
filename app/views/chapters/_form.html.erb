@@ -1,0 +1,25 @@
+<%= tw_form_with model: [book, chapter] do |form| %>
+  <%= tag.fieldset class: "grid grid-cols-1 md:grid-cols-4 md:gap-x-6" do %>
+    <%= tag.div class: "col-span-3" do %>
+      <%= form.text_input :title %>
+    <% end %>
+    <%= tag.div class: "col-span-1" do %>
+      <%= form.label :status, class: "block mt-6 mb-3 text-xl lg:text-sm font-medium text-gray-700" %>
+      <%= form.collection_select_input :status, chapter_statuses_for_select, :first, :last %>
+    <% end %>
+  <% end %>
+  <%= tag.fieldset class: "mt-6" do %>
+    <% if chapter.cover.attached? %>
+      <%= image_tag chapter.cover.variant(:thumb) %>
+    <% end %>
+    <%= form.file_field :cover %>
+  <% end %>
+  <%= tag.fieldset class: "mt-6" do %>
+    <%= form.label :summary %>
+    <%= form.marksmith :summary %>
+  <% end %>
+  <%= tag.fieldset class: "mt-6 flex justify-end items-center gap-x-8" do %>
+    <%= link_to t("cancel"), books_path, class: "cancel-link" %>
+    <%= form.submit t("chapters.save"), class: "edit-link" %>
+  <% end %>
+<% end %>

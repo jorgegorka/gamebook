@@ -1,0 +1,12 @@
+<%= tag.li class: "grid grid-cols-4 p-4" do %>
+  <%= tag.div class: "col-span-2" do %>
+    <%= link_to chapter.title, book_chapter_path(book, chapter), class: "text-link" %>
+  <% end %>
+  <%= tag.div class: "col-span-1" do %>
+    <%= chapter.scenes.count %>
+  <% end %>
+  <%= tag.div class: "col-span-1" do %>
+    <%= link_to t("edit"), edit_book_chapter_path(book, chapter), class: "edit-link" %>
+    <%= link_to t("delete"), book_chapter_path(book, chapter), method: :delete, data: { confirm: t("are_you_sure") }, class: "delete-link" %>
+  <% end %>
+<% end %>

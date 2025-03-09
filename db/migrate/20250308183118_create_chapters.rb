@@ -6,10 +6,11 @@ class CreateChapters < ActiveRecord::Migration[8.0]
       t.text :summary
       t.integer :position, null: false, default: 0
       t.integer :status, default: 0, null: false
+      t.integer :scenes_count, default: 0, null: false
 
       t.timestamps
     end
 
-    add_index :chapters, %i[book_id position], unique: true
+    add_index :chapters, %i[book_id position]
   end
 end

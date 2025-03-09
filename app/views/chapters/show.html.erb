@@ -1,4 +1,13 @@
-<div>
-  <h1 class="font-bold text-4xl">Chapters#show</h1>
-  <p>Find me in app/views/chapters/show.html.erb</p>
-</div>
+<% count = @chapter.scenes.count %>
+<%= render "shared/section_header", title: @chapter.title do %>
+  <%= link_to t("chapters.new"), new_chapter_scene_path(@chapter), class: "new-link" %>
+<% end %>
+<%= tag.p "#{count} #{t("chapters.scenes", count:)}", class: "text-slate-500" %>
+<%= tag.ul class: "mt-10 divide-y divide-slate-100" do %>
+  <%= tag.li class: "grid grid-cols-4 p-4" do %>
+    <%= tag.p t("scenes.body"), class: "col-span-2" %>
+    <%= tag.p t("scenes.has_links"), class: "col-span-1" %>
+    <%= tag.div class: "col-span-1" %>
+  <% end %>
+  <%= render @chapter.scenes, chapter: @chapter %>
+<% end %>

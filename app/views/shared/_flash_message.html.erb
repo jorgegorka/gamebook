@@ -1,0 +1,10 @@
+<%= tag.div class: "fixed bottom-0 md:top-0 md:m-8 h-20 z-50 left-1/2 -translate-x-1/2", data: { controller: "notice", "notice-show-class": "fixed", "notice-hide-class": "hidden" } do %>
+  <%= tag.div class: "py-2 px-4 items-center leading-none lg:rounded-full flex lg:inline-flex #{banner_type(type)}", role: "alert" do %>
+    <%= tag.span message, class: "font-semibold mr-2 text-left flex-auto" %>
+    <%= tag.button '#', class: "inline-flex text-gray-400 focus:outline-none focus:text-gray-500 transition.ease-in-out duration-150", data: { action: "notice#hide" } do %>
+      <svg class="h-5 w-5" fill="currentColor" viewbox="0 0 20 20">
+        <path clip-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" fill-rule="evenodd"/>
+      </svg>
+    <% end %>
+  <% end %>
+<% end %>

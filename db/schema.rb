@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_09_121053) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_09_114208) do
   create_table "accounts", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_09_121053) do
     t.text "summary"
     t.text "remarks"
     t.integer "status", default: 0, null: false
+    t.integer "chapters_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_books_on_user_id"
@@ -61,10 +62,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_09_121053) do
     t.string "title"
     t.text "summary"
     t.integer "position", default: 0, null: false
+    t.integer "status", default: 0, null: false
+    t.integer "scenes_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "status", default: 0, null: false
-    t.index ["book_id", "position"], name: "index_chapters_on_book_id_and_position", unique: true
+    t.index ["book_id", "position"], name: "index_chapters_on_book_id_and_position"
     t.index ["book_id"], name: "index_chapters_on_book_id"
   end
 
@@ -87,7 +89,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_09_121053) do
     t.integer "position", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chapter_id", "position"], name: "index_scenes_on_chapter_id_and_position", unique: true
+    t.index ["chapter_id", "position"], name: "index_scenes_on_chapter_id_and_position"
     t.index ["chapter_id"], name: "index_scenes_on_chapter_id"
   end
 
