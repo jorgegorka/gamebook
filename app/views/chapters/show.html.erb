@@ -2,15 +2,19 @@
   <%= link_to @book.title, book_path(@book), class: "main-menu-link" %>
 <% end %>
 <% content_for :top_right do %>
+  <%= link_to t("chaters.edit"), edit_book_chapter_path(@book, @chapter), class: "edit-link" %>
   <%= link_to t("scenes.new"), new_chapter_scene_path(@chapter), class: "new-link" %>
 <% end %>
 <% count = @chapter.scenes.count %>
 <%= render "shared/section_header", title: @chapter.title do %>
   <%= "#{count} #{t("chapters.scenes", count:)}" %>
 <% end %>
+<%= tag.div class: "mt-10" do %>
+  <%== marksmithed @chapter.summary %>
+<% end %>
 <%= tag.ul class: "mt-10 divide-y divide-slate-100" do %>
   <%= tag.li class: "grid grid-cols-4 p-4" do %>
-    <%= tag.p t("scenes.body"), class: "col-span-2" %>
+    <%= tag.p t("scenes.title"), class: "col-span-2" %>
     <%= tag.p t("scenes.has_links"), class: "col-span-1" %>
     <%= tag.div class: "col-span-1" %>
   <% end %>

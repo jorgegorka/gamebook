@@ -1,4 +1,4 @@
-<%= tag.div data: { controller: "search-modal", search_modal_source_value: "1", search_modal_endpoint_value: :scenes, search_modal_selected_value: selected.to_json, search_modal_field_value: field_name, search_modal_multi_value: multi  } do %>
+<%= tag.div data: { controller: "search-modal", search_modal_source_value: source_id, search_modal_endpoint_value: :scenes, search_modal_selected_value: selected.to_json, search_modal_field_value: field_name, search_modal_multi_value: multi  } do %>
   <%= hidden_field_tag :search_id, search_id, data: { search_modal_target: 'searchId' }, id: 'searchId' %>
   <%= hidden_field_tag :collection, collection , data: { search_modal_target: :collection } %>
   <%= render "shared/search/template" %>
