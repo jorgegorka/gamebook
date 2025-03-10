@@ -1,0 +1,11 @@
+<%= tag.input id: "search_field", class: "w-full rounded-md border-0 py-1.5 bg-white pl-3 pr-12 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6", "aria-controls": "options", "aria-expanded" => "false", autofocus: true, role: "combobox", name: "name", placeholder: search_placeholder,  data: { search_modal_target: 'name', action: "search-modal#update keydown.down->search-modal#downResult:prevent keyup->search-modal#validateInput" }, type: "text" %>
+<%= tag.button class: "absolute inset-y-0 right-8 flex items-center rounded-r-md px-2 focus:outline-none", type: "button", data: { action: "search-modal#clearSelection:prevent" } do %>
+  <%= tag.svg class: "w-5 h-5", fill: "none", stroke: "currentColor", "stroke-width" => "1.5", viewbox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg" do %>
+    <%= tag.path d: "M6 18L18 6M6 6l12 12", "stroke-linecap" => "round", "stroke-linejoin" => "round" %>
+  <% end %>
+<% end %>
+<%= tag.button class: "absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none", type: "button", data: { action: 'search-modal#toggleResults:prevent' } do %>
+  <%= tag.svg class: "w-5 h-5", fill: "none", stroke: "currentColor", "stroke-width" => "1.5", viewbox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg" do %>
+    <%= tag.path d: "M19 9l-7 7-7-7", "stroke-linecap" => "round", "stroke-linejoin" => "round" %>
+  <% end %>
+<% end %>

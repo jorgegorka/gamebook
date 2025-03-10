@@ -6,7 +6,7 @@
     <% end %>
     <%= tag.div class: "" do %>
       <%= form.label :target_id, class: "block mt-6 mb-3 text-xl lg:text-sm font-medium text-gray-700" %>
-      <%= form.collection_select_input :target_id, scenes, :first, :last %>
+      <%= render "shared/search/index", source: book_id, search_id: SecureRandom.hex(5), collection: :scenes, field_name: "link[target_id]", multi: false, search_placeholder: t("links.scene_search"), selected: [] %>
     <% end %>
   <% end %>
   <%= tag.fieldset class: "mt-6 flex justify-end items-center gap-x-8" do %>

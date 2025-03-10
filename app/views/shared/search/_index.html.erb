@@ -1,0 +1,14 @@
+<%= tag.div data: { controller: "search-modal", search_modal_source_value: "1", search_modal_endpoint_value: :scenes, search_modal_selected_value: selected.to_json, search_modal_field_value: field_name, search_modal_multi_value: multi  } do %>
+  <%= hidden_field_tag :search_id, search_id, data: { search_modal_target: 'searchId' }, id: 'searchId' %>
+  <%= hidden_field_tag :collection, collection , data: { search_modal_target: :collection } %>
+  <%= render "shared/search/template" %>
+  <div class="relative.mt-2">
+    <div class="flex flex-col">
+      <%= tag.div class: "flex-0 mb-2", data: { search_modal_target: 'fancy' } %>
+      <div class="flex-1 relative mt-4 sm:mt-0">
+        <%= render "shared/search/form", search_placeholder: %>
+        <%= tag.div class: "absolute z-50 mt-1 max-h-60 w-full scroll-smooth overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm", id: search_id, role: "listbox", hidden: true, data: { 'search-modal-target': 'results', action: 'keydown.up->search-modal#upResult keydown.down->search-modal#downResult keydown.enter->search-modal#selectResult keydown.esc->search-modal#toggleResults' }, tabindex: "-1" %>
+      </div>
+    </div>
+  </div>
+<% end %>

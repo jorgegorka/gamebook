@@ -17,4 +17,4 @@
   <% end %>
   <%= render @scene.inbound_links %>
 <% end %>
-<%= render "links/form", origin_id: @scene.id, scenes: @scenes, link: Link.new %>
+<%= render "links/form", origin_id: @scene.id, scenes: @scenes, link: Link.new, book_id: @chapter.book_id %>

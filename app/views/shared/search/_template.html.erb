@@ -1,0 +1,10 @@
+<%= tag.template id: "tag-template" do %>
+  <%= tag.span class: "input-tags pointer-events-none inline-flex mr-2 items-center gap-x-0.5 rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 hover:bg-red-200/75" do %>
+    {{name}}
+    <%= tag.button type: "button", data: { action: 'search-modal#removeTag:prevent' }, class: "relative -mr-1 h-3.5 w-3.5 rounded-sm pointer-events-auto" do %>
+      <svg class="h-3.5 w-3.5 stroke-red-600/50 hover:stroke-red-800/75 pointer-events-none", viewbox: "0 0 14 14">
+        <path d="M4 4l6 6m0-6l-6 6" />
+      </svg>
+    <% end %>
+  <% end %>
+<% end %>

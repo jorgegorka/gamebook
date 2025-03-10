@@ -51,7 +51,7 @@ export default class extends Controller {
   }
 
   async requestInfo(text) {
-    const endpoint = `/main/${this.endpointValue}/search?name=${text}&source=${this.sourceValue}&collection=${this.collection}&search_id=${this.searchIdTarget.value}`;
+    const endpoint = `/search?name=${text}&source=${this.sourceValue}&collection=${this.collection}&search_id=${this.searchIdTarget.value}`;
     const response = await post(endpoint, {
       headers: { Accept: "text/vnd.turbo-stream.html" },
       responseKind: "turbo-stream",

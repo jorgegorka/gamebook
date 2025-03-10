@@ -1,7 +1,7 @@
 class ScenesController < ApplicationController
   before_action :find_chapter
   before_action :find_scene, only: %i[show edit update destroy]
-  before_action :find_scenes, only: %i[show]
+  before_action :find_scenes, only: %i[show search]
 
   def show
   end
@@ -39,6 +39,15 @@ class ScenesController < ApplicationController
     redirect_to book_chapter_path(@chapter, @chapter.book), notice: t("scenes.deleted")
   end
 
+  def search
+    @scenes.where('scenes.title ILIKE ?', "%#{search_name}%").order(title: :asc)
+
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to admin_employees_path }
+    end
+  end
+
   private
 
     def scene_params
@@ -57,5 +66,9 @@ class ScenesController < ApplicationController
       @scenes = @chapter.book.scenes
         .where.not(scenes: { id: @scene.inbound_links.pluck(:origin_id) })
         .order(title: :asc).pluck(:id, :title)
+    end
+
+    def search_name
+      @search_name ||= ActiveRecord::Base.sanitize_sql_like params[:name]
     end
 end

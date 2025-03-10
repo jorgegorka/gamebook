@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   end
 
   resources :chapters, only: [] do
-    resources :scenes
+    resources :scenes 
   end
 
   resources :links
 
+  post "search" => "search#create"
   get "up" => "rails/health#show", as: :rails_health_check
 
   root "books#index"

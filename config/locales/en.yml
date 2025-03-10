@@ -41,6 +41,7 @@ en:
     deleted: "Link deleted"
     name: "Link"
     save: "Save link"
+    scene_search: "Search for a scene"
     title: "Links to other scenes"
     updated: "Link updated"
   not_found: "we couldn't find that record."
