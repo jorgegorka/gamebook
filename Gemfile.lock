@@ -180,14 +180,14 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.4)
-    marksmith (0.2.2)
+    marksmith (0.3.0)
       activesupport
     matrix (0.4.2)
     mini_magick (5.2.0)
       benchmark
       logger
     mini_mime (1.1.5)
-    minitest (5.25.4)
+    minitest (5.25.5)
     msgpack (1.8.0)
     net-imap (0.5.6)
       date
