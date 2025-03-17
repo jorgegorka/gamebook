@@ -2,6 +2,7 @@
   <%= link_to t('books.list'), books_path, class: "main-menu-link" %>
 <% end %>
 <% content_for :top_right do %>
+  <%= link_to t("books.graph"), graphs_path(book_id: @book.id), class: "main-menu-link" %>
   <%= link_to t("chapters.new"), new_book_chapter_path(@book), class: "new-link" %>
 <% end %>
 <% count = @book.chapters.count %>

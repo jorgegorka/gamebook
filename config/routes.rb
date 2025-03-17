@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :scenes 
   end
 
+  resources :graphs, only: :index
+
   resources :links
 
   post "search" => "search#create"

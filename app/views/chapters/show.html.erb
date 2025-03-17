@@ -2,7 +2,8 @@
   <%= link_to @book.title, book_path(@book), class: "main-menu-link" %>
 <% end %>
 <% content_for :top_right do %>
-  <%= link_to t("chaters.edit"), edit_book_chapter_path(@book, @chapter), class: "edit-link" %>
+  <%= link_to t("chapters.graph"), graphs_path(book_id: @book.id, chapter_id: @chapter.id), class: "main-menu-link" %>
+  <%= link_to t("chapters.edit"), edit_book_chapter_path(@book, @chapter), class: "edit-link" %>
   <%= link_to t("scenes.new"), new_chapter_scene_path(@chapter), class: "new-link" %>
 <% end %>
 <% count = @chapter.scenes.count %>
