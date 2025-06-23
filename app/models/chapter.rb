@@ -1,7 +1,9 @@
 class Chapter < ApplicationRecord
-  STATUS_DRAFT = 'draft'.freeze
-  STATUS_EDITING = 'editing'.freeze
-  STATUS_READY = 'ready'.freeze
+  STATUS_DRAFT = "draft".freeze
+  STATUS_EDITING = "editing".freeze
+  STATUS_READY = "ready".freeze
+
+  acts_as_list scope: :book
 
   belongs_to :book, counter_cache: true
 

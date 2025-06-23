@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "acts_as_list"
 gem "bcrypt", "~> 3.1.7"
 gem "commonmarker"
 gem "graphviz"
@@ -9,7 +10,6 @@ gem "importmap-rails"
 gem "jbuilder"
 gem "kamal", require: false
 gem "marksmith"
-gem "positioning"
 gem "propshaft"
 gem "puma", ">= 5.0"
 gem "rails", "~> 8.0.1"

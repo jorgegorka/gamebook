@@ -1,5 +1,9 @@
-<%= tag.li class: "grid grid-cols-4 p-4" do %>
-  <%= tag.div class: "col-span-2" do %>
+<%= tag.li class: "grid grid-cols-8 p-4" do %>
+  <%= tag.div class: "col-span-1 flex gap-x-4" do %>
+    <%= button_to 'up', position_path(scene, move: :up), method: :put, class: "text-link" %>
+    <%= button_to 'down', position_path(scene, move: :down), method: :put, class: "text-link" %>
+  <% end %>
+  <%= tag.div class: "col-span-5" do %>
     <%= link_to scene.title, chapter_scene_path(chapter, scene), class: "text-link" %>
   <% end %>
   <%= tag.div class: "col-span-1" do %>

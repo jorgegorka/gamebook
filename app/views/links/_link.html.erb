@@ -1,5 +1,5 @@
 <%= tag.li class: "grid grid-cols-3 p-4" do %>
-  <%= tag.p link.title, class: "col-span-1" %>
+  <%= tag.p link_to(link.title, chapter_scene_path(link.target.chapter, link.target), class: "text-link"), class: "col-span-1" %>
   <%= tag.p link.target.title, class: "col-span-1" %>
   <%= tag.div class: "col-span-1 flex justify-end" do %>
     <%= button_to t("delete"), link_path(link), method: :delete, data: { confirm: t("are_you_sure") }, class: "destroy-link" %>
